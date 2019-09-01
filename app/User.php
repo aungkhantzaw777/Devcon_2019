@@ -16,24 +16,35 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username' ,
+        'email' ,
+        'password' ,
+        'phone' ,
+        'dob' ,
+        'gender' ,
+        'location' ,
+        'employee_type' ,
+        'occupation' ,
+        'company_name' ,
+        'study_place' ,
+        'position' ,
+        'dev_ide' ,
+        'about_devcon' ,
+        'previous_year' ,
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+    
     protected $hidden = [
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
+    
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tickets()
+    {
+        require $this->hasMany('App\Ticket');
+    }
 }

@@ -3,48 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TicketStoreForm;
+use App\Ticket;
 
 class TicketController extends Controller
 {
     
-    public function index()
-    {
-        //
-    }
+    
 
    
     public function create()
     {
-        //
+       
+        return view('client.create-ticket');
     }
 
     
-    public function store(Request $request)
+    public function store(TicketStoreForm $request)
     {
-        //
+        $attribute = $request->all();
+
+        $attribute['user_id'] = auth()->id();
+        
+        Ticket::create($attribute);
+        return redirect('/home');
+        
     }
 
     
-    public function show($id)
-    {
-        //
-    }
-
     
-    public function edit($id)
-    {
-        //
-    }
-
-    
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    
-    public function destroy($id)
-    {
-        //
-    }
 }

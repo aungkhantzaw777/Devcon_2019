@@ -5,17 +5,29 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Code</th>
+                            <th scope="col">Create at</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($tickets as $ticket)
+                        <tr>
+                            <th scope="row">{{ $ticket->id }} </th>
+                            <td>{{$ticket->code}}</td>
+                            <td>{{$ticket->created_at}}</td>
+                            
+                        </tr>
+                        @endforeach
+                        
+                        
+                    </tbody>
+                </table>
+                <a href="{{ route('ticket.create') }}" class="btn btn-success">Buy Ticket</a>
             </div>
         </div>
     </div>

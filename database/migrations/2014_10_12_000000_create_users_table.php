@@ -24,12 +24,12 @@ class CreateUsersTable extends Migration
             $table->string('gender');
             $table->string('location');
             $table->string('employee_type');
-            $table->string('occupation');
+            $table->text('occupation');
             $table->string('company_name');
             $table->string('study_place');
             $table->string('position');
             $table->string('dev_ide');
-            $table->string('about_devcon');
+            $table->text('about_devcon');
             $table->string('previous_year');
             $table->rememberToken();
             $table->timestamps();
