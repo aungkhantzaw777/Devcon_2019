@@ -11,7 +11,6 @@
                             <th scope="col">#</th>
                             <th scope="col">Code</th>
                             <th scope="col">Create at</th>
-                            
                         </tr>
                     </thead>
                     <tbody>
@@ -20,11 +19,8 @@
                             <th scope="row">{{ $ticket->id }} </th>
                             <td>{{$ticket->code}}</td>
                             <td>{{$ticket->created_at}}</td>
-                            
                         </tr>
                         @endforeach
-                        
-                        
                     </tbody>
                 </table>
                 <a href="{{ route('ticket.create') }}" class="btn btn-success">Buy Ticket</a>
