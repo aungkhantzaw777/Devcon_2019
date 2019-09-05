@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Faker\Factory as Faker;
 
 class RegisterController extends Controller
 {
@@ -30,7 +31,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'username' => ['required'],
             'email' => ['required'],
-            'password' => ['required'],
             'phone' => ['required'],
             'dob' => ['required'],
             'gender' => ['required'],
@@ -54,13 +54,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $faker = Faker::create();
+        $data['ticket_id'] = $faker->unique()->randomDigit;
         return User::create([
             
             'username' => $data['username'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
             'dob' => $data['dob'],
+            'ticket_id' => 'DC9'.$faker->unique()->randomDigit.'012',
             'gender' => $data['gender'],
             'location' => $data['location'],
             'employee_type' => $data['employee_type'],

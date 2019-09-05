@@ -22,6 +22,7 @@ class User extends Authenticatable
         'phone' ,
         'dob' ,
         'gender' ,
+        'ticket_id',
         'location' ,
         'employee_type' ,
         'occupation' ,

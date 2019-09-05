@@ -14,7 +14,7 @@ class UserTest extends TestCase
     {
         $this->withoutExceptionHandling();
         
-        $attributes = factory('App\User')->raw(['password' => 'password']);
+        $attributes = factory('App\User')->raw();
         
         
         $this->post('/register', $attributes)->assertRedirect('home');
@@ -33,6 +33,12 @@ class UserTest extends TestCase
 
         $this->post('/register', $attributes)->assertSessionHasErrors('username');
         
+    }
+    public function test_useremail_required() 
+    {
+        $attributes = factory('App\User')->raw(['email' => '']);
+
+        $this->post('/register', $attributes)->assertSessionHasErrors('email');
     }
     
 }
