@@ -8,7 +8,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserTest extends TestCase
 {
-    use WithFaker, RefreshDatabase;
+    // use WithFaker, RefreshDatabase;
+    use WithFaker;
     
     public function test_user_can_register () 
     {
@@ -40,5 +41,14 @@ class UserTest extends TestCase
 
         $this->post('/register', $attributes)->assertSessionHasErrors('email');
     }
+
+    // public function test_a_user_can_login_with_ticket_id() 
+    // {
+    //     $this->withoutExceptionHandling();
+
+    //     $user = factory('App\User')->create();
+        
+    //     $this->post('/login',['ticket_id' => $user->ticket_id])->assertRedirect('/home');
+    // }
     
 }

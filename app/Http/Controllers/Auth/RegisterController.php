@@ -55,7 +55,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $faker = Faker::create();
-        $data['ticket_id'] = $faker->unique()->randomDigit;
+        
         return User::create([
             
             'username' => $data['username'],
