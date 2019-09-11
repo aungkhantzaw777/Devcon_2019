@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         require $this->hasMany('App\Ticket');
     }
+
+    public static function byEmail($email)
+    {
+        return static::where('email',$email)->first();
+    }
 }
