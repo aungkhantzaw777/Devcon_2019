@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
+
+use function GuzzleHttp\Psr7\hash;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +25,7 @@ class User extends Authenticatable
         'dob' ,
         'gender' ,
         'password',
+        'api_token',
         'ticket_id',
         'location' ,
         'employee_type' ,
@@ -53,4 +57,5 @@ class User extends Authenticatable
     {
         return static::where('email',$email)->first();
     }
+
 }

@@ -9,16 +9,34 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterForm;
 use Faker\Factory as Faker;
 use Auth;
+
 class AuthUserController extends Controller
 {
+    use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+    
     public function register()
     {
         return view('auth.register');
     }
 
-    private function faker()
+    public function login() 
     {
-        return Faker::create();
+        return view('auth.login');
+    }
+
+    public function postLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'           => 'required|email|exists:users|max:255',
+            'password'           => 'required|string',
+        ]);
+        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+            // Success
+            return redirect()->intended('/home');
+        } else {
+            // Go back on error (or do what you want)
+            return redirect()->back();
+        }
     }
 
     public function postRegister(RegisterForm $request)
@@ -32,7 +50,8 @@ class AuthUserController extends Controller
             'dob' => $request['dob'],
             'gender' => $request['gender'],
             'password'=> Hash::make($request['password']),
-            'ticket_id'=>  'DC9'.$faker->sentence.'90',
+            'api_token'=> str_random(60),
+            'ticket_id'=>  'DC9'.$faker->unique()->numerify('#####').'90',
             'location' => $request['location'],
             'employee_type' => $request['employee_type'],
             'occupation' => $request['occupation'],
@@ -43,11 +62,10 @@ class AuthUserController extends Controller
             'about_devcon' => $request['about_devcon'],
             'previous_year' => $request['previous_year']
         ]);
-        Auth::attamp(['email'=>$user->email]);
-        return '/home';
+        return redirect('/success');
     }
 
-    public function login(){
-
+    public function success(){
+        return view('success');
     }
 }

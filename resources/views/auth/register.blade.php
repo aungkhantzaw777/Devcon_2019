@@ -67,7 +67,7 @@
                             <label for="Date_of_brith" class="col-md-4 col-form-label text-md-right">{{ __('Date of Birth') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="dob" type="text" class="form-control @error('dob') is-invalid @enderror" value="{{ old('confirm') }}" name="dob" autocomplete="new-password">
+                                <input id="dob" type="date" class="form-control @error('dob') is-invalid @enderror" value="{{ old('confirm') }}" name="dob" autocomplete="new-password">
                             </div>
                             @error('dob')
                             <span class="invalid-feedback" role="alert">

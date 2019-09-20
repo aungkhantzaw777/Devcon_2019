@@ -20,8 +20,15 @@ Route::get('/', function () {
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('/ticket','TicketController')->middleware('auth');
 
 Route::get('register','AuthUserController@register')->name('register');
+Route::get('success','AuthUserController@success')->name('success');
 Route::post('register','AuthUserController@postRegister')->name('register');
 Route::get('login','AuthUserController@login')->name('login');
+Route::post('login','AuthUserController@postLogin')->name('loginPost');
+
+Route::group(['prefix' => 'dev_con'], function () {
+    
+});
