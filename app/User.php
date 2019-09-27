@@ -13,6 +13,8 @@ class User extends Authenticatable
 {
     use Notifiable, HasApiTokens;
 
+    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +23,7 @@ class User extends Authenticatable
     protected $fillable = [
         'username' ,
         'email' ,
+        'admin',
         'phone' ,
         'dob' ,
         'gender' ,
@@ -48,14 +51,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
     public function tickets()
     {
         require $this->hasMany('App\Ticket');
     }
 
+    public function isAdmin()
+    {
+        return ($this->admin == 1)? true : false;
+    }
+
     public static function byEmail($email)
     {
         return static::where('email',$email)->first();
+    }
+    public static function byTicket($ticket)
+    {
+        return static::where('ticket_id',$ticket)->first();
     }
 
 }

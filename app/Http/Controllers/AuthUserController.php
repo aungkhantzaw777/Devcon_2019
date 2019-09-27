@@ -13,6 +13,15 @@ use Auth;
 class AuthUserController extends Controller
 {
     use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+    protected $request;
+
+    public function __construct(Request $request)
+    {
+        // $this->middleware('auth');
+        $this->request = $request;
+    }
+    
     
     public function register()
     {
@@ -22,6 +31,12 @@ class AuthUserController extends Controller
     public function login() 
     {
         return view('auth.login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 
     public function postLogin(Request $request)
@@ -39,6 +54,21 @@ class AuthUserController extends Controller
         }
     }
 
+    public function postTicket()
+    {
+        $this->validate($this->request,[
+            'ticket_id' => 'required'
+        ]);
+
+        $user = \App\User::byTicket($this->request->ticket_id);
+        if($user){
+            Auth::login($user);
+            return redirect()->intended('/home');
+        }else{
+            return redirect()->back();
+        }
+    }
+
     public function postRegister(RegisterForm $request)
     {
         $faker = Faker::create();
@@ -46,6 +76,7 @@ class AuthUserController extends Controller
         $user = \App\User::create([
             'username' => $request['username'],
             'email' => $request['email'],
+            'admin' => false,
             'phone' => $request['phone'],
             'dob' => $request['dob'],
             'gender' => $request['gender'],
@@ -62,6 +93,7 @@ class AuthUserController extends Controller
             'about_devcon' => $request['about_devcon'],
             'previous_year' => $request['previous_year']
         ]);
+        
         return redirect('/success');
     }
 

@@ -3,19 +3,49 @@
 @section('content')
 
 <div class="container">
-    <div>
-        <h1>Developer Conference 2019</h1>
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <div class="form-group row">
-                <div class="col-md-4">
-                    <input type="text" name="ticket_id" placeholder="Ticket ID" class="form-control">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-12 mb-2">
+            <div class="card">
+                <div class="card-header">
+                    Already Bought Ticket
                 </div>
-                <div class="col-md-4">
-                    <input type="submit" value="go" class="btn btn-success">
+                <div class="card-body">
+                <form action="{{ route('loginTicket') }}" method="POST">
+                    @csrf
+                    <div class="form-group row">
+                        <div class="col-10">
+                            <input type="text" class="form-control @error('ticket_id') is-invalid @enderror" placeholder="Ticket ID..." id="ticket_id" name="ticket_id">
+                            @error('ticket_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        
+                        <div class="col-2">
+                            <button class="btn btn-success float-right">next</button>
+                        </div>
+                        
+                    </div>
+                </form>
+                    
+                    
                 </div>
             </div>
-        </form>
+        </div>
+        <div class="col-md-6 col-lg-6 col-12 mb-2 new-ticket-wrap">
+            <div class="card">
+                <div class="card-header">
+                    Buy a new ticket
+                </div>
+                <div class="card-body">
+                    <h1 class="text-primary text-center">8000Ks</h1>
+                    <a class="btn btn-success btn-block" href="register">Buy Now</a>
+                    
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 

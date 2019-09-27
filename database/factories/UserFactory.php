@@ -5,6 +5,7 @@ use App\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,13 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'username' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'admin' => false,
         'email_verified_at' => now(),
         'ticket_id' => 'DC9'.$faker->unique()->numerify($string = '######').'012',
         // 'api_token' => hash('sha256',str_random(60)),
         'remember_token' => str_random(60),
         'phone' => $this->faker->phoneNumber,
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'password' => Hash::make('123456'), // password
         'dob' => $this->faker->dateTimeBetween('1990-01-01', '2012-12-31')->format('d/m/Y'),
         'gender' => $this->faker->randomElement(['male','female']),
         'location' => $this->faker->address,

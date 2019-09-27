@@ -60,6 +60,7 @@ class RegisterController extends Controller
             
             'username' => $data['username'],
             'email' => $data['email'],
+            'admin' => false,
             'phone' => $data['phone'],
             'dob' => $data['dob'],
             'ticket_id' => 'DC9'.$faker->unique()->randomDigit.'012',
