@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\{User,Ticket};
 use App\AuthenticatesUser;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterForm;
+use App\Mail\UserRegister;
 use Faker\Factory as Faker;
 use Auth;
+use Illuminate\Validation\Rule;
 
 class AuthUserController extends Controller
 {
@@ -73,6 +75,7 @@ class AuthUserController extends Controller
     {
         $faker = Faker::create();
 
+      
         $user = \App\User::create([
             'username' => $request['username'],
             'email' => $request['email'],
@@ -82,7 +85,7 @@ class AuthUserController extends Controller
             'gender' => $request['gender'],
             'password'=> Hash::make($request['password']),
             'api_token'=> str_random(60),
-            'ticket_id'=>  'DC9'.$faker->unique()->numerify('#####').'90',
+            'ticket_id'=>  'DC9'.$faker->unique()->numerify('######').'90',
             'location' => $request['location'],
             'employee_type' => $request['employee_type'],
             'occupation' => $request['occupation'],
@@ -93,11 +96,32 @@ class AuthUserController extends Controller
             'about_devcon' => $request['about_devcon'],
             'previous_year' => $request['previous_year']
         ]);
-        
+
+        \Mail::to('aungkhantzaw133@gmail.com')->queue(new UserRegister($user));
         return redirect('/success');
     }
 
     public function success(){
         return view('success');
     }
+
+    public function activate()
+    {
+        $this->valiateTicket();
+        $unAvaliableTicket = Ticket::alreadyActivate($this->request->ticket_id);
+        if($unAvaliableTicket){
+            return view('welcome')->withErrors(['ticket_id' => 'Ticket Alraeay Activate']);
+        }else{
+            return redirect('activateAccount/'.$this->request->ticket_id);
+        }
+    }
+
+    private function valiateTicket()
+    {
+        request()->validate([
+            'ticket_id' => 'required|exists:tickets,ticket_id'
+        ]);
+    }
+
+    
 }

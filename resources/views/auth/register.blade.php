@@ -12,7 +12,7 @@
                         @csrf
                         
                         <div class="form-group row">
-                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('username') }}</label>
+                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
                             
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" autocomplete="username" autofocus>
@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="Password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
                             
@@ -52,7 +52,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="comfirm password" class="col-md-4 col-form-label text-md-right">{{ __('Comfirm Password') }}</label>
                             
@@ -103,7 +103,7 @@
                             </span>
                             @enderror
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="company_name" class="col-md-4 col-form-label text-md-right">{{ __('company name') }}</label>
                             
@@ -131,10 +131,19 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="employee_type" class="col-md-4 col-form-label text-md-right">{{ __('employee type') }}</label>
+                            <label for="employee_type" class="col-md-4 col-form-label text-md-right">{{ __('Employee Type') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="employee_type" type="text" class="form-control @error('employee_type') is-invalid @enderror" value="{{ old('employee_type') }}" name="employee_type" >
+                                <select name="employee_type" class="form-control @error('employee_type') is-invalid @enderror" id="employee_type">
+                                    <option value="">Choose...</option>
+                                    <option value="Permanent/Full-time Developer">Permanent/Full-time Developer</option>
+                                    <option value="Freelance Developer">Freelance Developer</option>
+                                    <option value="Management Level at IT Company">Management Level at IT Company</option>
+                                    <option value="Self-Employed">Self-Employed</option>
+                                    <option value="Owned Company / Business in IT Field">Owned Company / Business in IT Field</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                                
                             </div>
                             @error('employee_type')
                             <span class="invalid-feedback" role="alert">
@@ -146,7 +155,7 @@
                         
                         
                         <div class="form-group row">
-                            <label for="occupation" class="col-md-4 col-form-label text-md-right">{{ __('occupation') }}</label>
+                            <label for="occupation" class="col-md-4 col-form-label text-md-right">{{ __('Occupation') }}</label>
                             
                             <div class="col-md-6">
                                 <textarea name="occupation" id="occupation" class="form-control @error('occupation') is-invalid @enderror">{{ old('occupation') }}</textarea>
@@ -162,7 +171,31 @@
                             <label for="study_place" class="col-md-4 col-form-label text-md-right">{{ __('Study Place') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="study_place" type="text" class="form-control @error('study_place') is-invalid @enderror" value="{{ old('study_place') }}" name="study_place" >
+                                <div class="study_place">
+                                    <input type="radio" name="study_place" id="study_place" value="Computer University (eg: UCSY, UCST, etc)"><span>Computer University (eg: UCSY, UCST, etc)</span>
+                                </div>
+                                <div class="study_place">
+                                    <input type="radio" name="study_place" id="study_place" value="Technology University (eg: TU-Mawbi, TU-Thanlyin)"><span>Technology University (eg: TU-Mawbi, TU-Thanlyin)</span>
+                                </div>
+                                <div class="study_place">
+                                    <input type="radio" name="study_place" id="study_place" value="University of Information Technology (UIT)"><span>University of Information Technology (UIT)</span>
+                                </div>
+                                <div class="study_place">
+                                    <input type="radio" name="study_place" id="study_place" value="Private IT School/College"><span>Private IT School/College</span>
+                                </div>
+
+                                <div class="study_place">
+                                    <input type="radio" name="study_place" id="study_place" value="Private IT Training Center"><span>Private IT Training Center</span>
+                                </div>
+
+                                <div class="study_place">
+                                    <input type="radio" name="study_place" id="study_place" value="Private IT Training Center"><span>Private IT Training Center</span>
+                                </div>
+                                <div class="study_place">
+                                    <input type="radio" name="study_place" id="study_place" value="Other"><span>Other</span>
+                                </div>
+                                
+                                {{-- <input id="study_place" type="text" class="form-control @error('study_place') is-invalid @enderror" value="{{ old('study_place') }}" name="study_place" > --}}
                             </div>
                             @error('study_place')
                             <span class="invalid-feedback" role="alert">
@@ -196,7 +229,7 @@
                             </span>
                             @enderror
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="about_devcon" class="col-md-4 col-form-label text-md-right">{{ __('About DevCon?') }}</label>
                             

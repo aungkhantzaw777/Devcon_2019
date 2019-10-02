@@ -10,7 +10,8 @@
                     Already Bought Ticket
                 </div>
                 <div class="card-body">
-                <form action="{{ route('loginTicket') }}" method="POST">
+                @include('flash-message')
+                <form action="{{ route('activate') }}" method="POST">
                     @csrf
                     <div class="form-group row">
                         <div class="col-10">
@@ -23,7 +24,7 @@
                         </div>
                         
                         <div class="col-2">
-                            <button class="btn btn-success float-right">next</button>
+                            <button class="btn btn-success float-right">Activate</button>
                         </div>
                         
                     </div>

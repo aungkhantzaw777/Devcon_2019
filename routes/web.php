@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/ticket','TicketController')->middleware('auth');
 
 Route::get('register','AuthUserController@register')->name('register');
+Route::post('activate','AuthUserController@activate')->name('activate');
 Route::get('logout','AuthUserController@logout')->name('clientLogout');
 Route::get('success','AuthUserController@success')->name('success');
 Route::post('register','AuthUserController@postRegister')->name('register');

@@ -52,9 +52,9 @@ class User extends Authenticatable
     ];
 
 
-    public function tickets()
+    public function ticket()
     {
-        require $this->hasMany('App\Ticket');
+        return $this->hasOne('App\Ticket');
     }
 
     public function isAdmin()
@@ -66,9 +66,11 @@ class User extends Authenticatable
     {
         return static::where('email',$email)->first();
     }
-    public static function byTicket($ticket)
-    {
-        return static::where('ticket_id',$ticket)->first();
-    }
+    // public static function byTicket($ticket)
+    // {
+    //     return static::where('ticket_id',$ticket)->first();
+    // }
+
+    
 
 }
