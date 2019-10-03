@@ -10,7 +10,7 @@ class Ticket extends Model
 
     public function user()
     {
-        return $this->hasOne('App\user');
+        return $this->belongsTo('App\user');
     }
 
     # return collection

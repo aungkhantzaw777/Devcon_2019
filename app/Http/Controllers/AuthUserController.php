@@ -23,14 +23,14 @@ class AuthUserController extends Controller
         // $this->middleware('auth');
         $this->request = $request;
     }
-    
-    
+
+
     public function register()
     {
         return view('auth.register');
     }
 
-    public function login() 
+    public function login()
     {
         return view('auth.login');
     }
@@ -71,11 +71,23 @@ class AuthUserController extends Controller
         }
     }
 
+    public function postActivate(RegisterForm $request)
+    {
+
+        $user = $this->request->all();
+        $user['admin'] = false;
+        $user['password'] = Hash::make($user['password']);
+        $ticket_id = $user['ticket_id'];
+        $user = User::create($user);
+
+        Ticket::where('ticket_id',$ticket_id)->update(['user_id'=> $user->id]);
+        \Mail::to('aungkhantzaw133@gmail.com')->queue(new UserRegister($user));
+        return redirect('/success');
+    }
+
     public function postRegister(RegisterForm $request)
     {
-        $faker = Faker::create();
 
-      
         $user = \App\User::create([
             'username' => $request['username'],
             'email' => $request['email'],
@@ -85,7 +97,6 @@ class AuthUserController extends Controller
             'gender' => $request['gender'],
             'password'=> Hash::make($request['password']),
             'api_token'=> str_random(60),
-            'ticket_id'=>  'DC9'.$faker->unique()->numerify('######').'90',
             'location' => $request['location'],
             'employee_type' => $request['employee_type'],
             'occupation' => $request['occupation'],
@@ -96,6 +107,9 @@ class AuthUserController extends Controller
             'about_devcon' => $request['about_devcon'],
             'previous_year' => $request['previous_year']
         ]);
+        $ticket_id = Ticket::where('user_id',null)->first()->ticket_id;
+        Ticket::where('ticket_id',$ticket_id)->update(['user_id'=> $user->id]);
+
 
         \Mail::to('aungkhantzaw133@gmail.com')->queue(new UserRegister($user));
         return redirect('/success');
@@ -112,8 +126,15 @@ class AuthUserController extends Controller
         if($unAvaliableTicket){
             return view('welcome')->withErrors(['ticket_id' => 'Ticket Alraeay Activate']);
         }else{
-            return redirect('activateAccount/'.$this->request->ticket_id);
+            $route = "/activateAccount/".$this->request->ticket_id;
+            return redirect()->intended($route);
         }
+    }
+
+    public function activateAccount()
+    {
+        return view('auth.activate')
+                ->with(['ticket_id' => $this->request->ticket_id]);
     }
 
     private function valiateTicket()
@@ -123,5 +144,5 @@ class AuthUserController extends Controller
         ]);
     }
 
-    
+
 }

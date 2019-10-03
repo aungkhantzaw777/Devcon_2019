@@ -42,13 +42,9 @@ class UserTest extends TestCase
         $this->post('/register', $attributes)->assertSessionHasErrors('email');
     }
 
-    // public function test_a_user_can_login_with_ticket_id() 
-    // {
-    //     $this->withoutExceptionHandling();
+    public function test_activate_account()
+    {
 
-    //     $user = factory('App\User')->create();
-        
-    //     $this->post('/login',['ticket_id' => $user->ticket_id])->assertRedirect('/home');
-    // }
+    }
     
 }

@@ -25,7 +25,7 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'admin' => false,
         'email_verified_at' => now(),
-        'ticket_id' => 'DC9'.$faker->unique()->numerify($string = '######').'012',
+        // 'ticket_id' => 'DC9'.$faker->unique()->numerify($string = '######').'012',
         // 'api_token' => hash('sha256',str_random(60)),
         'remember_token' => str_random(60),
         'phone' => $this->faker->phoneNumber,

@@ -29,7 +29,6 @@ class User extends Authenticatable
         'gender' ,
         'password',
         'api_token',
-        'ticket_id',
         'location' ,
         'employee_type' ,
         'occupation' ,
