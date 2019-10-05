@@ -31,7 +31,7 @@ Route::get('success','AuthUserController@success')->name('success');
 Route::post('register','AuthUserController@postRegister')->name('register');
 Route::post('activateAccount','AuthUserController@postActivate')->name('postActivate');
 Route::post('login','AuthUserController@postLogin')->name('loginPost');
-Route::post('/','AuthUserController@postTicket')->name('loginTicket');
+
 
 Route::group(['prefix' => 'dev_con'], function () {
     Route::get('/', 'AdminController@index');

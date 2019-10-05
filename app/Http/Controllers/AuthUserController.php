@@ -56,20 +56,7 @@ class AuthUserController extends Controller
         }
     }
 
-    public function postTicket()
-    {
-        $this->validate($this->request,[
-            'ticket_id' => 'required'
-        ]);
-
-        $user = \App\User::byTicket($this->request->ticket_id);
-        if($user){
-            Auth::login($user);
-            return redirect()->intended('/home');
-        }else{
-            return redirect()->back();
-        }
-    }
+    
 
     public function postActivate(RegisterForm $request)
     {
@@ -81,37 +68,28 @@ class AuthUserController extends Controller
         $user = User::create($user);
 
         Ticket::where('ticket_id',$ticket_id)->update(['user_id'=> $user->id]);
-        \Mail::to('aungkhantzaw133@gmail.com')->queue(new UserRegister($user));
+        \Mail::to($user->email)->queue(new UserRegister($user));
         return redirect('/success');
     }
 
     public function postRegister(RegisterForm $request)
     {
+        
+        $user = $this->request->all();
+        $user['admin'] = false;
+        $user['password'] = Hash::make($request['password']);
 
-        $user = \App\User::create([
-            'username' => $request['username'],
-            'email' => $request['email'],
-            'admin' => false,
-            'phone' => $request['phone'],
-            'dob' => $request['dob'],
-            'gender' => $request['gender'],
-            'password'=> Hash::make($request['password']),
-            'api_token'=> str_random(60),
-            'location' => $request['location'],
-            'employee_type' => $request['employee_type'],
-            'occupation' => $request['occupation'],
-            'company_name' => $request['company_name'],
-            'study_place' => $request['study_place'],
-            'position' => $request['position'],
-            'dev_ide' => $request['dev_ide'],
-            'about_devcon' => $request['about_devcon'],
-            'previous_year' => $request['previous_year']
-        ]);
+
+        # validate if ticket is avaliable
+        $avaliable_ticket = Ticket::where('user_id', null)->get();
+        if($avaliable_ticket->count() == 0) return  redirect('/register')->withErrors(['ticket_id' => 'Ticket is not avaliable in here!']);
+        # save to adatabase
+        $user = User::create($user);
         $ticket_id = Ticket::where('user_id',null)->first()->ticket_id;
         Ticket::where('ticket_id',$ticket_id)->update(['user_id'=> $user->id]);
 
 
-        \Mail::to('aungkhantzaw133@gmail.com')->queue(new UserRegister($user));
+        \Mail::to($user->email)->queue(new UserRegister($user));
         return redirect('/success');
     }
 

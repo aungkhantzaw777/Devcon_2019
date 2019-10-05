@@ -6,7 +6,17 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
-                
+                @error('ticket_id')
+
+                <div class="alert alert-danger alert-block">
+
+                    <button type="button" class="close" data-dismiss="alert">×</button> 
+
+                    <strong>{{ $message }}</strong>
+
+                </div>
+
+                @enderror
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

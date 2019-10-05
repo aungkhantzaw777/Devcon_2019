@@ -23,6 +23,7 @@ class RegisterForm extends FormRequest
      */
     public function rules()
     {
+
         return  [
             'username' => 'required',
             'email' => 'required|unique:users,email|max:255',
