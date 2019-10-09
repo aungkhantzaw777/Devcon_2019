@@ -64,6 +64,8 @@ class AuthUserController extends Controller
         $user = $this->request->all();
         $user['admin'] = false;
         $user['password'] = Hash::make($user['password']);
+
+
         $ticket_id = $user['ticket_id'];
         $user = User::create($user);
 
@@ -111,6 +113,8 @@ class AuthUserController extends Controller
 
     public function activateAccount()
     {
+        $avaliable_ticket = Ticket::where('user_id',$this->request->ticket_id)->first();
+        if(!$avaliable_ticket) return abort(401);
         return view('auth.activate')
                 ->with(['ticket_id' => $this->request->ticket_id]);
     }
@@ -119,6 +123,9 @@ class AuthUserController extends Controller
     {
         request()->validate([
             'ticket_id' => 'required|exists:tickets,ticket_id'
+        ],[
+            'ticket_id.required' => 'Please Fill Ticket ID!',
+            'ticket_id.exists' => 'Invalid Ticket ID!'
         ]);
     }
 
