@@ -3,6 +3,6 @@
 
 @include('layouts.menu')
 
-@yield('content')   
+@yield('content')
 
 @include('layouts.footer') 

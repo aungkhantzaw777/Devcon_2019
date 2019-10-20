@@ -32,7 +32,7 @@ class AuthUserController extends Controller
 
     public function login()
     {
-        return view('auth.login');
+        return view('pages.login');
     }
 
     public function logout()

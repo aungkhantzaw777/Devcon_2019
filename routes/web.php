@@ -12,8 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 })->name('welcome');
+// pages route
+// Route::get('/about', 'PageController@about')->name('about');
+Route::view('/about', 'pages.about');
+Route::view('/blog', 'pages.blog');
+Route::view('/call-for-proposals', 'pages.call-for-proposals');
+Route::view('/contact', 'pages.contact');
+Route::view('/login', 'pages.login');
+Route::view('/previous-years', 'pages.previous-years');
+Route::view('/register-your-ticket-process', 'pages.register-your-ticket-process');
+Route::view('/speakers', 'pages.speakers');
+Route::view('/sponsors', 'pages.sponsors');
+Route::view('/schedule', 'pages.schedule');
+Route::view('/get-ticket', 'pages.get-ticket');
 
 // Auth::routes();
 

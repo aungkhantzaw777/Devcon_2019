@@ -2,14 +2,14 @@
 
 @section('content')
     
-    <!-- Welcome Area Start -->
+    {{-- <!-- Welcome Area Start --> --}}
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
-            <!-- Single Slide -->
+            {{-- <!-- Single Slide --> --}}
             <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(/img/slider1.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                        <!-- Welcome Text -->
+                        {{-- <!-- Welcome Text --> --}}
                         <div class="col-12">
                             <div class="welcome-text text-right">
                                 <h2 data-animation="fadeInUp" data-delay="300ms">Developer <br>Conference</h2>
@@ -24,16 +24,16 @@
                 </div>
             </div>
 
-            <!-- Single Slide -->
+            {{-- <!-- Single Slide --> --}}
             <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(img/slider2.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
-                        <!-- Welcome Text -->
+                        {{-- <!-- Welcome Text --> --}}
                         <div class="col-12">
                             <div class="welcome-text-two text-center">
                                 <h5 data-animation="fadeInUp" data-delay="100ms">Welcome To</h5>
                                 <h2 data-animation="fadeInUp" data-delay="300ms">Developer Conference</h2>
-                                <!-- Event Meta -->
+                                {{-- <!-- Event Meta --> --}}
                                 <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
                                     <a class="event-date" href="#"><i class="zmdi zmdi-map"></i> MICT Park, Hlaing, Yangon</a>
                                     <a class="event-author" href="#"><i class="zmdi zmdi-calendar"></i> 21st-22th December,2019 </a>
@@ -49,16 +49,16 @@
             </div>
         </div>
 
-        <!-- Scroll Icon -->
+        {{-- <!-- Scroll Icon --> --}}
         <div class="icon-scroll" id="scrollDown"></div>
     </section>
-    <!-- Welcome Area End -->
+    {{-- <!-- Welcome Area End --> --}}
 
-    <!-- About Us And Countdown Area Start -->
+    {{-- <!-- About Us And Countdown Area Start --> --}}
     <section class="about-us-countdown-area section-padding-100-0" id="about">
         <div class="container">
             <div class="row align-items-center">
-                <!-- About Content -->
+                {{-- <!-- About Content --> --}}
                 <div class="col-12 col-md-6">
                     <div class="about-content-text mb-80">
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">About DevCon</h6>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <!-- About Thumb -->
+                {{-- <!-- About Thumb --> --}}
                 <div class="col-12 col-md-6">
                     <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
                         <img src="/img/bg-img/dev-logo-text.png" alt="" class="hidden-xs">
@@ -78,12 +78,12 @@
             </div>
         </div>
 
-        <!-- Counter Up Area -->
+        {{-- <!-- Counter Up Area --> --}}
         <div class="countdown-up-area">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-3">
-                        <!-- Countdown Text -->
+                        {{-- <!-- Countdown Text --> --}}
                         <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
                             <h6>Conference Date</h6>
                             <h4>Count Every Second Until the Event</h4>
@@ -99,13 +99,13 @@
             </div>
         </div>
     </section>
-    <!-- About Us And Countdown Area End -->
+    {{-- <!-- About Us And Countdown Area End --> --}}
 
-    <!-- Our Speakings Area Start -->
+    {{-- <!-- Our Speakings Area Start --> --}}
     <section class="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style="background-image: url(img/bg-img/3.jpg);">
         <div class="container">
             <div class="row">
-                <!-- Heading -->
+                {{-- <!-- Heading --> --}}
                 <div class="col-12">
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
                         <p>Our Speakings</p>
@@ -115,19 +115,19 @@
             </div>
 
             <div class="row">
-                <!-- Single Speaker Area -->
+                {{-- <!-- Single Speaker Area --> --}}
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
+                        {{-- <!-- Thumb --> --}}
                         <div class="speaker-single-thumb">
                             <img src="/img/kokoye.jpg" alt="" class="img-responsive">
                         </div>
-                        <!-- Social Info -->
+                        {{-- <!-- Social Info --> --}}
                         <div class="social-info">
                             <a href="https://www.facebook.com/kokoye2007" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
                             <a href="#"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
-                        <!-- Info -->
+                        {{-- <!-- Info --> --}}
                         <div class="speaker-info">
                             <h5>Ko Ko Ye</h5>
                             <p>Team Leader at Ubuntu Myanmar LoCo Team</p>
@@ -135,19 +135,19 @@
                     </div>
                 </div>
 
-                <!-- Single Speaker Area -->
+                {{-- <!-- Single Speaker Area --> --}}
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
+                        {{-- <!-- Thumb --> --}}
                         <div class="speaker-single-thumb">
                             <img src="/img/EiMaung.jpg" alt="" class="img-responsive">
                         </div>
-                        <!-- Social Info -->
+                        {{-- <!-- Social Info --> --}}
                         <div class="social-info">
                             <a href="https://www.facebook.com/ei.mung" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
                             <a href="#"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
-                        <!-- Info -->
+                        {{-- <!-- Info --> --}}
                         <div class="speaker-info">
                             <h5>Ei Maung</h5>
                             <p>Former Founder, Project Manager at Durosoft</p>
@@ -155,19 +155,19 @@
                     </div>
                 </div>
 
-                <!-- Single Speaker Area -->
+                {{-- <!-- Single Speaker Area --> --}}
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb -->
+                        {{-- <!-- Thumb --> --}}
                         <div class="speaker-single-thumb">
                             <img src="/img/AKHlaing.jpg" alt="" class="img-responsive">
                         </div>
-                        <!-- Social Info -->
+                        {{-- <!-- Social Info --> --}}
                         <div class="social-info">
                             <a href="https://www.facebook.com/ak.hlaing" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
                             <a href="#"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
-                        <!-- Info -->
+                        {{-- <!-- Info --> --}}
                         <div class="speaker-info">
                             <h5>Aye Kyaw Hlaing</h5>
                             <p>Founder of V2M</p>
@@ -175,71 +175,7 @@
                     </div>
                 </div>
 
-               <!--  <!-- Single Speaker Area --
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb --
-                        <div class="speaker-single-thumb">
-                            <img src="https://place-hold.it/500x542/" alt="">
-                        </div>
-                        <!-- Social Info --
-                        <div class="social-info">
-                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                        </div>
-                        <!-- Info --
-                        <div class="speaker-info">
-                            <h5>Speaker Name4</h5>
-                            <p>Photographer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Speaker Area --
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb --
-                        <div class="speaker-single-thumb">
-                            <img src="https://place-hold.it/500x542/" alt="">
-                        </div>
-                        <!-- Social Info --
-                        <div class="social-info">
-                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                        </div>
-                        <!-- Info --
-                        <div class="speaker-info">
-                            <h5>Speaker Name5</h5>
-                            <p>UX Manager</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Speaker Area --
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumb --
-                        <div class="speaker-single-thumb">
-                            <img src="https://place-hold.it/500x542/" alt="">
-                        </div>
-                        <!-- Social Info --
-                        <div class="social-info">
-                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-                        </div>
-                        <!-- Info --
-                        <div class="speaker-info">
-                            <h5>Speaker Name6</h5>
-                            <p>Product Design</p>
-                        </div>
-                    </div>
-                </div> -->
+               
 
                 <div class="col-12">
                     <div class="more-speaker-btn text-center mt-20 mb-40 wow fadeInUp" data-wow-delay="300ms">
@@ -249,13 +185,13 @@
             </div>
         </div>
     </section>
-    <!-- Our Speakings Area End -->
+    {{-- <!-- Our Speakings Area End --> --}}
 
-    <!-- Our Schedule Area Start -->
+    {{-- <!-- Our Schedule Area Start --> --}}
     <section class="our-schedule-area section-padding-100">
         <div class="container">
             <div class="row">
-                <!-- Heading -->
+                {{-- <!-- Heading --> --}}
                 <div class="col-12">
                     <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
                         <p>Our Timetable</p>
@@ -267,208 +203,101 @@
             <div class="row">
                 <div class="col-12">
                     <div class="schedule-tab">
-                        <!-- Nav Tabs -->
+                        {{-- <!-- Nav Tabs --> --}}
                         <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab" role="tablist">
-                          <!--   <li class="nav-item">
+                          {{-- <!--   <li class="nav-item">
                                 <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab" aria-controls="step-one" aria-expanded="true">Monday <br> <span>January 14, 2019</span></a>
                             </li> -->
-                            <!-- Nav Item -->
+                            <!-- Nav Item --> --}}
                             <li class="nav-item">
                                 <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">Saturday <br> <span>December 21, 2019</span></a>
                             </li>
-                            <!-- Nav Item -->
+                            {{-- <!-- Nav Item --> --}}
                             <li class="nav-item">
                                 <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#step-three" role="tab" aria-controls="step-three" aria-expanded="true">Sunday <br> <span>December 22, 2019</span></a>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Tab Content -->
+                    {{-- <!-- Tab Content --> --}}
                     <div class="tab-content" id="conferScheduleTabContent">
-                        <!-- <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
-                            <!-- Single Tab Content --
-                            <div class="single-tab-content">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <!-- Single Schedule Area --
-                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info --
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb --
-                                                <div class="single-schedule-tumb">
-                                                    <img src="/img/bg-img/10.jpg" alt="">
-                                                </div>
-                                                <!-- Single Schedule Info --
-                                                <div class="single-schedule-info">
-                                                    <h6>Dealing with Difficult People</h6>
-                                                    <p>by <span>Gary Armstrong</span> / Ceo of Confer</p>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info --
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn --
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-
-                                        <!-- Single Schedule Area --
-                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info --
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb --
-                                                <div class="single-schedule-tumb">
-                                                    <img src="/img/bg-img/11.jpg" alt="">
-                                                </div>
-                                                <!-- Single Schedule Info --
-                                                <div class="single-schedule-info">
-                                                    <h6>Crop Insurance Conference</h6>
-                                                    <p>by <span>Amanda Hudson</span> / Ceo of Confer</p>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info --
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn --
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-
-                                        <!-- Single Schedule Area --
-                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info --
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb --
-                                                <div class="single-schedule-tumb">
-                                                    <img src="/img/bg-img/12.jpg" alt="">
-                                                </div>
-                                                <!-- Single Schedule Info --
-                                                <div class="single-schedule-info">
-                                                    <h6>Capdm Executive Conference</h6>
-                                                    <p>by <span>Martha Burke</span> / Ceo of Confer</p>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info --
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn --
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-
-                                        <!-- Single Schedule Area --
-                                        <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info --
-                                            <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb --
-                                                <div class="single-schedule-tumb">
-                                                    <img src="/img/bg-img/13.jpg" alt="">
-                                                </div>
-                                                <!-- Single Schedule Info --
-                                                <div class="single-schedule-info">
-                                                    <h6>Street Food Convention</h6>
-                                                    <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
-                                                </div>
-                                            </div>
-                                            <!-- Single Schedule Info --
-                                            <div class="schedule-time-place">
-                                                <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                                                <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                                            </div>
-                                            <!-- Schedule Btn --
-                                            <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <!-- More Schedule Btn --
-                                    <div class="col-12">
-                                        <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                                            <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
- -->
+           
                         <div class="tab-pane fade show active" id="step-two" role="tabpanel" aria-labelledby="saturday-tab">
-                            <!-- Single Tab Content -->
+                            {{-- <!-- Single Tab Content --> --}}
                             <div class="single-tab-content">
                                 <div class="row">
                                     <div class="col-12">
-                                        <!-- Single Schedule Area -->
+                                        {{-- <!-- Single Schedule Area --> --}}
                                         <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
+                                            {{-- <!-- Single Schedule Thumb and Info --> --}}
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
+                                                {{-- <!-- Single Schedule Thumb --> --}}
                                                 <div class="single-schedule-tumb">
                                                     <img src="https://place-hold.it/150x150/" alt="">
                                                 </div>
-                                                <!-- Single Schedule Info -->
+                                                {{-- <!-- Single Schedule Info --> --}}
                                                 <div class="single-schedule-info">
                                                     <h6>Title 1</h6>
                                                     <p>by <span>Speaker 1</span> / Ceo of Confer</p>
                                                 </div>
                                             </div>
-                                            <!-- Single Schedule Info -->
+                                            {{-- <!-- Single Schedule Info --> --}}
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 10:00-11:00 AM 21 Dec 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Conference Hall</p>
                                             </div>
-                                            <!-- Schedule Btn -->
+                                            {{-- <!-- Schedule Btn --> --}}
                                             <a href="" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
-                                        <!-- Single Schedule Area -->
+                                        {{-- <!-- Single Schedule Area --> --}}
                                         <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
+                                            {{-- <!-- Single Schedule Thumb and Info --> --}}
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
+                                                {{-- <!-- Single Schedule Thumb --> --}}
                                                 <div class="single-schedule-tumb">
                                                     <img src="https://place-hold.it/150x150/" alt="">
                                                 </div>
-                                                <!-- Single Schedule Info -->
+                                                {{-- <!-- Single Schedule Info --> --}}
                                                 <div class="single-schedule-info">
                                                     <h6>Title 2</h6>
                                                     <p>by <span>Speaker 2</span> / Ceo of Confer</p>
                                                 </div>
                                             </div>
-                                            <!-- Single Schedule Info -->
+                                            {{-- <!-- Single Schedule Info --> --}}
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 9:00AM-11:00PM 21 Dec 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Room 204 </p>
                                             </div>
-                                            <!-- Schedule Btn -->
+                                            {{-- <!-- Schedule Btn --> --}}
                                             <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
-                                        <!-- Single Schedule Area -->
+                                        {{-- <!-- Single Schedule Area --> --}}
                                         <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
+                                            {{-- <!-- Single Schedule Thumb and Info --> --}}
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
+                                                {{-- <!-- Single Schedule Thumb --> --}}
                                                 <div class="single-schedule-tumb">
                                                     <img src="https://place-hold.it/150x150/" alt="">
                                                 </div>
-                                                <!-- Single Schedule Info -->
+                                                {{-- <!-- Single Schedule Info --> --}}
                                                 <div class="single-schedule-info">
                                                     <h6>Title 3</h6>
                                                     <p>by <span>Speaker 3</span> / Ceo of Confer</p>
                                                 </div>
                                             </div>
-                                            <!-- Single Schedule Info -->
+                                            {{-- <!-- Single Schedule Info --> --}}
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i>  11:30AM-12:00PM 21 Dec 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i>Room 404</p>
                                             </div>
-                                            <!-- Schedule Btn -->
+                                            {{-- <!-- Schedule Btn --> --}}
                                             <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
                                     </div>
 
-                                    <!-- More Schedule Btn -->
+                                    {{-- <!-- More Schedule Btn --> --}}
                                     <div class="col-12">
                                         <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
                                             <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
@@ -479,58 +308,58 @@
                         </div>
 
                         <div class="tab-pane fade" id="step-three" role="tabpanel" aria-labelledby="sunday-tab">
-                            <!-- Single Tab Content -->
+                            {{-- <!-- Single Tab Content --> --}}
                             <div class="single-tab-content">
                                 <div class="row">
                                     <div class="col-12">
-                                        <!-- Single Schedule Area -->
+                                        {{-- <!-- Single Schedule Area --> --}}
                                         <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
+                                            {{-- <!-- Single Schedule Thumb and Info --> --}}
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
+                                                {{-- <!-- Single Schedule Thumb --> --}}
                                                 <div class="single-schedule-tumb">
                                                     <img src="https://place-hold.it/150x150/" alt="">
                                                 </div>
-                                                <!-- Single Schedule Info -->
+                                                {{-- <!-- Single Schedule Info --> --}}
                                                 <div class="single-schedule-info">
                                                     <h6>Title 4</h6>
                                                     <p>by <span>Speaker 4</span> / Ceo of Confer</p>
                                                 </div>
                                             </div>
-                                            <!-- Single Schedule Info -->
+                                            {{-- <!-- Single Schedule Info --> --}}
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i>11:30AM-12:00PM 22 Dec 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i>Conference Hall</p>
                                             </div>
-                                            <!-- Schedule Btn -->
+                                            {{-- <!-- Schedule Btn --> --}}
                                             <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
 
-                                        <!-- Single Schedule Area -->
+                                        {{-- <!-- Single Schedule Area --> --}}
                                         <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                            <!-- Single Schedule Thumb and Info -->
+                                            {{-- <!-- Single Schedule Thumb and Info --> --}}
                                             <div class="single-schedule-tumb-info d-flex align-items-center">
-                                                <!-- Single Schedule Thumb -->
+                                                {{-- <!-- Single Schedule Thumb --> --}}
                                                 <div class="single-schedule-tumb">
                                                     <img src="https://place-hold.it/150x150/" alt="">
                                                 </div>
-                                                <!-- Single Schedule Info -->
+                                                {{-- <!-- Single Schedule Info --> --}}
                                                 <div class="single-schedule-info">
                                                     <h6>Title 5</h6>
                                                     <p>by <span>Speaker 5</span> / Ceo of Confer</p>
                                                 </div>
                                             </div>
-                                            <!-- Single Schedule Info -->
+                                            {{-- <!-- Single Schedule Info --> --}}
                                             <div class="schedule-time-place">
                                                 <p><i class="zmdi zmdi-time"></i> 11:30AM-12:00PM 22 Dec 2019</p>
                                                 <p><i class="zmdi zmdi-map"></i> Room 302</p>
                                             </div>
-                                            <!-- Schedule Btn -->
+                                            {{-- <!-- Schedule Btn --> --}}
                                             <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
                                         </div>
                                     </div>
 
-                                    <!-- More Schedule Btn -->
+                                    {{-- <!-- More Schedule Btn --> --}}
                                     <div class="col-12">
                                         <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
                                             <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
@@ -544,13 +373,13 @@
             </div>
         </div>
     </section>
-    <!-- Our Schedule Area End -->
+    {{-- <!-- Our Schedule Area End --> --}}
 
-    <!-- Our Ticket Pricing Table Area Start -->
+    {{-- <!-- Our Ticket Pricing Table Area Start --> --}}
     <section class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(img/bg-img/14.jpg);">
         <div class="container">
             <div class="row">
-                <!-- Heading -->
+                {{-- <!-- Heading --> --}}
                 <div class="col-12">
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
                         <p>We have early bird discount for advanced ticket.</p>
