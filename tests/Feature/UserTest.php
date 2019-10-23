@@ -16,12 +16,12 @@ class UserTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        factory('App\Ticket')->create();
+        factory('App\Ticket')->create(['sale_online' => '1']);
 
         $attributes = factory('App\User')->raw(['password' => '123456', 'password_confirmation' => '123456']);
 
         $this->post('/register', $attributes);
-        
+
         $this->assertDatabaseHas('users', [
             'username' => $attributes['username'],
             'email' => $attributes['email'],
@@ -68,7 +68,7 @@ class UserTest extends TestCase
         $user = factory('App\User')->create(['password' => Hash::make('123456')]);
         $ticket = factory('App\Ticket')->create(['user_id' => $user->id]);
         $this->post('/login', ['email' => $user->email , 'password' => $user->password]);
-        
+
     }
 
 

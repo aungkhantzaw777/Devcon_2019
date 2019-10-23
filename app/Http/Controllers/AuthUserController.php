@@ -56,7 +56,7 @@ class AuthUserController extends Controller
         }
     }
 
-    
+
 
     public function postActivate(RegisterForm $request)
     {
@@ -76,14 +76,14 @@ class AuthUserController extends Controller
 
     public function postRegister(RegisterForm $request)
     {
-        
+
         $user = $this->request->all();
         $user['admin'] = false;
         $user['password'] = Hash::make($request['password']);
 
 
         # validate if ticket is avaliable
-        $avaliable_ticket = Ticket::where('user_id', null)->get();
+        $avaliable_ticket = Ticket::where('user_id', null)->where('sale_online', '1')->get();
         if($avaliable_ticket->count() == 0) return  redirect('/register-your-ticket-process')->withErrors(['ticket_id' => 'Ticket is not avaliable in here!']);
         # save to adatabase
         $user = User::create($user);
@@ -106,18 +106,24 @@ class AuthUserController extends Controller
         if($unAvaliableTicket){
             return view('welcome')->withErrors(['ticket_id' => 'Ticket Alraeay Activate']);
         }else{
+
             $route = "/activateAccount/".$this->request->ticket_id;
-            return redirect()->intended($route);
+
+            return redirect('/activate-your-ticket/'. $this->request->ticket_id);
         }
     }
 
     public function activateAccount()
     {
-        $avaliable_ticket = Ticket::where('user_id',$this->request->ticket_id)->first();
+
+        $avaliable_ticket = Ticket::where('ticket_id', $this->request->ticket_id)->get()->first();
         if(!$avaliable_ticket) return abort(401);
-        return view('auth.activate')
+
+        return view('pages.activate-ticket')
                 ->with(['ticket_id' => $this->request->ticket_id]);
     }
+
+
 
     private function valiateTicket()
     {

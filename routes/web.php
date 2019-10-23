@@ -23,10 +23,14 @@ Route::view('/contact', 'pages.contact');
 Route::view('/login', 'pages.login');
 Route::view('/previous-years', 'pages.previous-years');
 Route::view('/register-your-ticket-process', 'pages.register-your-ticket-process');
+Route::view('/register-your-ticket', 'pages.register-your-ticket');
+Route::get('/activate-your-ticket/{ticket_id}', 'AuthUserController@activateAccount');
+
 Route::view('/speakers', 'pages.speakers');
 Route::view('/sponsors', 'pages.sponsors');
 Route::view('/schedule', 'pages.schedule');
 Route::view('/profile', 'pages.profile')->name('profile');
+Route::post('activateAccount','AuthUserController@postActivate')->name('postActivate');
 // Route::get('/profile', function() {
 //     return QrCode::size(300)->generate('A basic example of QR code!');
 // })->name('profile');
@@ -38,7 +42,7 @@ Route::view('/get-ticket', 'pages.get-ticket');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/ticket','TicketController')->middleware('auth');
+// Route::resource('/ticket','TicketController')->middleware('auth');
 
 Route::get('register','AuthUserController@register')->name('register');
 Route::post('activate','AuthUserController@activate')->name('activate');
@@ -48,7 +52,7 @@ Route::get('login','AuthUserController@login')->name('login');
 Route::get('logout','AuthUserController@logout')->name('clientLogout');
 Route::get('success','AuthUserController@success')->name('success');
 Route::post('register','AuthUserController@postRegister')->name('postRegister');
-Route::post('activateAccount','AuthUserController@postActivate')->name('postActivate');
+
 Route::post('login','AuthUserController@postLogin')->name('loginPost');
 
 

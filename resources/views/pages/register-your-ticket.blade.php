@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    
+
 
 
     <!-- Breadcrumb Area Start -->
@@ -35,24 +35,30 @@
                 </div>
             </div>
             <div class="row">
-                
+
                 <div class="col-12">
                     <div class="mb-100 clearfix">
                         <div class="login_form">
-                            <form action="" method="post">
+                            <form action="{{ route('activate') }}" method="post">
+                              @csrf
                                 <div class="input_area">
                                     <div class="row bg-img bg-gradient-overlay">
                                         <!-- Form Group -->
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control mb-30" name="ID" id="ID" placeholder="Your Ticket ID" required>
+                                                <input type="text" class="form-control @error('ticket_id') is-invalid @enderror mb-30" name="ticket_id" id="ID" placeholder="Your Ticket ID" required>
+                                                @error('ticket_id')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <a href="/register-your-ticket-process/" class="btn confer-btn-white" name="nextstep">Next Step<i class="zmdi zmdi-long-arrow-right"></i></a>
+                                            <input type="submit" class="btn confer-btn-white" name="nextstep" value="Next Step">
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             </form>
