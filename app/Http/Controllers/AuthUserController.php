@@ -49,7 +49,7 @@ class AuthUserController extends Controller
         ]);
         if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
             // Success
-            return redirect()->intended('/home');
+            return redirect()->intended('/profile');
         } else {
             // Go back on error (or do what you want)
             return redirect()->back();
@@ -84,7 +84,7 @@ class AuthUserController extends Controller
 
         # validate if ticket is avaliable
         $avaliable_ticket = Ticket::where('user_id', null)->get();
-        if($avaliable_ticket->count() == 0) return  redirect('/register')->withErrors(['ticket_id' => 'Ticket is not avaliable in here!']);
+        if($avaliable_ticket->count() == 0) return  redirect('/register-your-ticket-process')->withErrors(['ticket_id' => 'Ticket is not avaliable in here!']);
         # save to adatabase
         $user = User::create($user);
         $ticket_id = Ticket::where('user_id',null)->first()->ticket_id;

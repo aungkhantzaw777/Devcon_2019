@@ -56,8 +56,23 @@
 
 	<button type="button" class="close" data-dismiss="alert">×</button>	
 
-	Please check the form below for errors
+	{{-- Please check the form below for errorsss --}}
+	<ul>
+		@if($errors->any())
+		@foreach ($errors->all() as $error)
+			<li class="alert alert-danger">{{ $error }}</li>
+		@endforeach
+		@endif
+	</ul>
 
 </div>
 
 @endif
+
+{{-- @if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error)
+        <li class="alert alert-danger" role="alert">{{ $error }}</li>
+        @endforeach
+	</div>
+    @endif --}}

@@ -29,6 +29,7 @@ $factory->define(User::class, function (Faker $faker) {
         // 'api_token' => hash('sha256',str_random(60)),
         'remember_token' => str_random(60),
         'phone' => $this->faker->phoneNumber,
+        'township' => $this->faker->word(),
         'password' => Hash::make('123456'), // password
         'dob' => $this->faker->dateTimeBetween('1990-01-01', '2012-12-31')->format('d/m/Y'),
         'gender' => $this->faker->randomElement(['male','female']),
@@ -37,7 +38,6 @@ $factory->define(User::class, function (Faker $faker) {
         'occupation' => $this->faker->sentence,
         'company_name' => $this->faker->company,
         'study_place' => $this->faker->sentence,
-        'position' => $this->faker->sentence,
         'dev_ide' => $this->faker->sentence,
         'about_devcon' => $this->faker->paragraph,
         'previous_year' => $this->faker->year,

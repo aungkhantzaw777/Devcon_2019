@@ -26,6 +26,10 @@ Route::view('/register-your-ticket-process', 'pages.register-your-ticket-process
 Route::view('/speakers', 'pages.speakers');
 Route::view('/sponsors', 'pages.sponsors');
 Route::view('/schedule', 'pages.schedule');
+Route::view('/profile', 'pages.profile')->name('profile');
+// Route::get('/profile', function() {
+//     return QrCode::size(300)->generate('A basic example of QR code!');
+// })->name('profile');
 Route::view('/get-ticket', 'pages.get-ticket');
 
 // Auth::routes();
@@ -43,7 +47,7 @@ Route::get('activateAccount/{ticket_id}','AuthUserController@activateAccount')->
 Route::get('login','AuthUserController@login')->name('login');
 Route::get('logout','AuthUserController@logout')->name('clientLogout');
 Route::get('success','AuthUserController@success')->name('success');
-Route::post('register','AuthUserController@postRegister')->name('register');
+Route::post('register','AuthUserController@postRegister')->name('postRegister');
 Route::post('activateAccount','AuthUserController@postActivate')->name('postActivate');
 Route::post('login','AuthUserController@postLogin')->name('loginPost');
 

@@ -26,7 +26,7 @@ class RegisterForm extends FormRequest
 
         return  [
             'username' => 'required',
-            'email' => 'required|unique:users,email|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
             'phone' => 'required',
             'dob' => 'required',
             'gender' => 'required',
@@ -36,7 +36,6 @@ class RegisterForm extends FormRequest
             'occupation' => 'required',
             'company_name' => 'required',
             'study_place' => 'required',
-            'position' => 'required',
             'dev_ide' => 'required',
             'about_devcon' => 'required',
             'previous_year' => 'required',

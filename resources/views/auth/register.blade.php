@@ -18,7 +18,7 @@
 
                 @enderror
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('postRegister') }}">
                         @csrf
                         
                         <div class="form-group row">

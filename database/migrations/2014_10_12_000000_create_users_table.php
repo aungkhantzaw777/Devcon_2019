@@ -24,13 +24,14 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('dob');
             $table->string('gender');
+            $table->string('township')->nullable();
             $table->string('location');
             $table->string('employee_type')->nullable();
             $table->text('occupation')->nullable();
             $table->string('company_name')->nullable();
             $table->string('study_place')->nullable();
-            $table->string('position')->nullable();
             $table->string('dev_ide')->nullable();
+            $table->string('dev_platform')->nullable();
             $table->text('about_devcon')->nullable();
             $table->string('previous_year')->nullable();
             $table->rememberToken();
